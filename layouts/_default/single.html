@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="single-post">
+    <header style="margin-bottom: 3rem;">
+        <h1 style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 0.5rem;">{{ .Title }}</h1>
+        <span class="muted" style="margin-bottom: 1.5rem; display: block; font-family: var(--font-code); font-size: 0.9rem;">{{ .RelPermalink }}</span>
+        
+        {{ if not .Params.hidemeta }}
+        <div class="meta-section" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); margin-bottom: 2.5rem;">
+            <div class="meta-item"><span class="meta-label">Created:</span> {{ .Date.Format "2006-01-02 15:04" }}</div>
+            {{ if .Params.completedDate }}
+            <div class="meta-item"><span class="meta-label">Completed:</span> {{ time.Format "2006-01-02 15:04" .Params.completedDate }}</div>
+            {{ end }}
+            {{ if and .Lastmod (ne (.Lastmod.Format "200601021504") (.Date.Format "200601021504")) }}
+            <div class="meta-item"><span class="meta-label">Edited:</span> {{ .Lastmod.Format "2006-01-02 15:04" }}</div>
+            {{ end }}
+            {{ if .GitInfo }}
+            <div class="meta-item commit-msg" title="Commit {{ .GitInfo.AbbreviatedHash }} by {{ .GitInfo.AuthorName }}">
+                <span class="meta-label">Commit:</span> <code>{{ .GitInfo.Subject }}</code>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+    <div class="content" style="font-family: var(--font-body); margin-bottom: 4rem;">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}
