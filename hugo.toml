@@ -1,0 +1,25 @@
+baseURL = 'https://debarkak.xyz/'
+locale = 'en-US'
+title = 'debarkak'
+
+enableGitInfo = true
+
+[frontmatter]
+lastmod = ["lastmod", ":git", ":fileModTime", "date", "publishDate"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+    [markup.goldmark.extensions]
+      definitionList = true
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
+[outputFormats]
+  [outputFormats.RSS]
+    baseName = "rss"
