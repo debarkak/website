@@ -503,8 +503,6 @@ still need to investigate
 - OP_ID behaviour
 - malformed payload handling
 - notification/event packet formats
-```
-
 need to compare protocol against older Nothing devices at some point. pretty sure Ear (1), Ear (2), Ear (a) and Ear (2024) all share the same basic framing but command ids definitely diverge. transport seems mostly stable, application layer doesn't.
 known internal model names i've seen
 ```
@@ -816,8 +814,6 @@ TODO
 - auto generate docs from command database
 - write proper streaming parser
 - eventually stop pretending this is "just a desktop app"
-```
-
 random things worth looking into later because i know i'm gonna forget them otherwise.
 Chrome 117 was apparently the first version to expose Bluetooth RFCOMM devices through Web Serial. need to read chromium commit history and figure out exactly what changed because ear-web wouldn't have been possible before that.
 https://developer.chrome.com/blog/serial-over-bluetooth
