@@ -27,7 +27,7 @@ because...
 
 however, i will be hosting everything else, like public FTP servers, etc. on my Oracle server, as the time i am writing this, my personal homelab server, which was a Dell Inspiron N4110, died around ~19 hours ago. (timed at the time of me writing this document.)
 
-because of that i will rely on my Oracle server for all my other services, I will use my Raspberry Pi 5 as a NAS, it runs Windows 11 (reasons in a later blog post).
+because of that i will rely on my Oracle server for all my other services, I will use my Raspberry Pi 5 as a NAS, it runs Windows 11.
 
 and because my oracle server is arm64, compiling x86 software (or running x86-only things) isn't always practical.
 

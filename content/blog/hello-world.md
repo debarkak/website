@@ -105,8 +105,6 @@ my Raspberry Pi 5 will become a NAS.
 
 it runs Windows 11.
 
-(reasons in a later blog post.)
-
 and because my Oracle server is arm64, compiling x86 software (or running x86-only things) isn't always practical.
 
 huge thanks to [@celunah](https://github.com/celunah) for letting me use one of his VPSes. it's in the US, has around 30 GB of storage, and the latency from India is... not great.
