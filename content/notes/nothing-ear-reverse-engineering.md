@@ -63,9 +63,9 @@ advertising = BLE.
 Fast Pair = BLE.
 actual protocol = RFCOMM.
 RFCOMM docs
-https://www.bluetooth.com/specifications/specs/rfcomm-1-2/
+https://www.bluetooth.com/specifications/specs/
 SPP docs
-https://www.bluetooth.com/specifications/specs/serial-port-profile-1-2/
+https://www.bluetooth.com/specifications/specs/
 honestly makes implementation way simpler.
 every implementation basically ends up doing
 ```python
@@ -85,7 +85,7 @@ Bluetooth uses SDP.
 client asks where the RFCOMM service currently lives.
 device replies with current channel.
 explains why earctl scans channels every single connection.
-https://www.bluetooth.com/specifications/specs/service-discovery-protocol-1-1/
+https://www.bluetooth.com/specifications/specs/
 probably worth caching successful channels though.
 MAC
 ↓
@@ -788,10 +788,7 @@ https://github.com/radiance-project/ear-web
 https://github.com/Bestello/dms-nothingx
 https://developer.chrome.com/blog/serial-over-bluetooth
 https://github.com/WebBluetoothCG/web-bluetooth
-https://www.bluetooth.com/specifications/specs/rfcomm-1-2/
-https://www.bluetooth.com/specifications/specs/serial-port-profile-1-2/
-https://www.bluetooth.com/specifications/specs/service-discovery-protocol-1-1/
-https://www.bluetooth.com/specifications/specs/logical-link-control-and-adaptation-protocol-specification-1-3/
+https://www.bluetooth.com/specifications/specs/
 https://developer.android.com/reference/android/bluetooth/BluetoothSocket
 https://github.com/bluez/bluez
 https://github.com/bluez/bluez/wiki/btmon
@@ -968,7 +965,6 @@ should compare Linux against Windows.
 wonder if Windows exposes same RFCOMM service through COM ports.
 if yes then desktop app becomes way easier.
 if not then probably need platform abstraction.
-also wanna see how macOS handles it.
 still haven't looked at BlueZ source.
 still haven't looked at Android Fluoride source.
 still haven't looked at Chromium serial implementation.
@@ -1164,7 +1160,6 @@ future probably needs
 Linux RFCOMM
 Windows RFCOMM
 Android
-maybe macOS
 ```
 all exposing same API.
 possible interface
