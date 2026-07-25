@@ -11,7 +11,7 @@ https://github.com/radiance-project/ear-web
 https://github.com/Bestello/dms-nothingx
 had all 3 open side by side basically the whole project.
 earctl = cleanest implementation.
-ear-web = "how tf does this even work in a browser".
+ear-web = "how th does this even work in a browser".
 dms-nothingx = easiest place to quickly change packets.
 started with ear-web because browser implementation was probably going to reveal transport immediately.
 opened bluetooth_socket.js.
@@ -24,7 +24,7 @@ instead found
 navigator.serial.requestPort()
 ```
 thought i opened the wrong file.
-why tf are bluetooth earbuds using serial.
+why th are bluetooth earbuds using serial.
 ended up reading chromium docs because i genuinely thought i misunderstood Web Bluetooth.
 turns out Web Bluetooth intentionally only supports BLE GATT.
 https://github.com/WebBluetoothCG/web-bluetooth
