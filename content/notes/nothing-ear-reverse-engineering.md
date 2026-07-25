@@ -4,6 +4,10 @@ date: 2026-07-25
 draft: false
 ---
 
+### note
+just to be transparent, majority of this notes is written with AI. i didn't really have that much time to write all of this. so i just let the ai write most of this note, however i will try to make the actual docs of this project 100% written by me (i won't be able to, i only know how to code.)
+
+###
 ok so this literally started because i wanted Nothing X on desktop. thought it'd be a weekend project. ended up learning way more bluetooth than i ever intended to.
 first repos i found
 https://github.com/DaanHessen/earctl
