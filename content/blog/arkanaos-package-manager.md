@@ -244,6 +244,8 @@ and luna was like:
 
 > Congratulations we made cool s*** and we are both autistic lol
 
+i think my psycologist will be proud. maybe. lol. 
+
 anyways, i did get invited to the organization on github, cuz i am now a contributor, which is pretty cool:
 
 https://github.com/arkana-team
