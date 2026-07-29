@@ -394,3 +394,60 @@ pre code {
     padding: 0;
     font-size: 1em;
 }
+
+/* Blockquotes & Articles */
+blockquote {
+    margin: 1.75rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--accent);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 0 6px 6px 0;
+    color: var(--text-primary);
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote p + p {
+    margin-top: 0.5rem;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Images in content / blog posts */
+.content img,
+article img,
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+figure img {
+    margin: 0 auto 0.75rem auto;
+}
+
+figcaption {
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.gallery-img {
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
