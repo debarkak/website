@@ -24,7 +24,7 @@ or if ur lazy here you can [click here](/blog/hello-world) and read my first blo
 you can also find me here:
 
 - github — <https://github.com/debarkak>
-- instagram — <https://instagram.com/debarkak>
+- instagram — <https://instagram.com/debarkakundu>
 - x — <https://x.com/debarkak>
 - youtube — <https://youtube.com/@debarkak>
 - unsplash — <https://unsplash.com/@debarkak>
