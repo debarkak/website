@@ -1,6 +1,6 @@
 ---
 title: "new social media, hello instagram"
-date: 2026-10-09
+date: 2026-10-08
 draft: false
 ---
 
