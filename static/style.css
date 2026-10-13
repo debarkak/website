@@ -1,13 +1,83 @@
 :root {
+    --font-heading: 'EB Garamond', serif;
+    --font-body: 'Source Serif 4', serif;
+    --font-code: 'JetBrains Mono', monospace;
+
+    /* Dark Mode Defaults */
     --bg-color: #181A1B;
     --text-primary: #E7DFC8;
     --text-muted: #B4AA94;
     --accent: #7C9A83;
     --border-color: #2D3133;
+    --code-bg: rgba(255, 255, 255, 0.05);
+    --pre-bg: rgba(255, 255, 255, 0.03);
+    --quote-bg: rgba(255, 255, 255, 0.03);
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --lightbox-bg: rgba(24, 26, 27, 0.95);
+    --img-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    --toggle-bg: rgba(24, 26, 27, 0.8);
+    --toggle-border: #2D3133;
+    --toggle-color: #B4AA94;
+    --highlight-bg: rgba(124, 154, 131, 0.3);
+}
 
-    --font-heading: 'EB Garamond', serif;
-    --font-body: 'Source Serif 4', serif;
-    --font-code: 'JetBrains Mono', monospace;
+/* Explicit Dark Theme */
+[data-theme="dark"] {
+    --bg-color: #181A1B;
+    --text-primary: #E7DFC8;
+    --text-muted: #B4AA94;
+    --accent: #7C9A83;
+    --border-color: #2D3133;
+    --code-bg: rgba(255, 255, 255, 0.05);
+    --pre-bg: rgba(255, 255, 255, 0.03);
+    --quote-bg: rgba(255, 255, 255, 0.03);
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --lightbox-bg: rgba(24, 26, 27, 0.95);
+    --img-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    --toggle-bg: rgba(24, 26, 27, 0.8);
+    --toggle-border: #2D3133;
+    --toggle-color: #B4AA94;
+    --highlight-bg: rgba(124, 154, 131, 0.3);
+}
+
+/* Explicit Light Theme (Warm parchment book-paper aesthetic matching dark mode) */
+[data-theme="light"] {
+    --bg-color: #FAF7F0;
+    --text-primary: #1E201E;
+    --text-muted: #65635C;
+    --accent: #3E6B48;
+    --border-color: #DDD8CB;
+    --code-bg: rgba(0, 0, 0, 0.05);
+    --pre-bg: rgba(0, 0, 0, 0.03);
+    --quote-bg: rgba(62, 107, 72, 0.07);
+    --hover-bg: rgba(0, 0, 0, 0.06);
+    --lightbox-bg: rgba(250, 247, 240, 0.96);
+    --img-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    --toggle-bg: rgba(250, 247, 240, 0.9);
+    --toggle-border: #DDD8CB;
+    --toggle-color: #65635C;
+    --highlight-bg: rgba(62, 107, 72, 0.25);
+}
+
+/* Auto Sync: System Light Scheme fallback when not explicitly forced to dark */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        --bg-color: #FAF7F0;
+        --text-primary: #1E201E;
+        --text-muted: #65635C;
+        --accent: #3E6B48;
+        --border-color: #DDD8CB;
+        --code-bg: rgba(0, 0, 0, 0.05);
+        --pre-bg: rgba(0, 0, 0, 0.03);
+        --quote-bg: rgba(62, 107, 72, 0.07);
+        --hover-bg: rgba(0, 0, 0, 0.06);
+        --lightbox-bg: rgba(250, 247, 240, 0.96);
+        --img-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        --toggle-bg: rgba(250, 247, 240, 0.9);
+        --toggle-border: #DDD8CB;
+        --toggle-color: #65635C;
+        --highlight-bg: rgba(62, 107, 72, 0.25);
+    }
 }
 
 * {
@@ -33,6 +103,7 @@ body {
     font-size: 1.0625rem; /* 17px for a slightly tighter, index-like feel */
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Highlight the target when jumping to a footnote */
@@ -41,7 +112,7 @@ body {
 }
 
 @keyframes highlight {
-    0% { background-color: rgba(124, 154, 131, 0.3); }
+    0% { background-color: var(--highlight-bg); }
     100% { background-color: transparent; }
 }
 
@@ -261,7 +332,7 @@ a:hover, a:focus {
 }
 
 .gallery-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--hover-bg);
 }
 
 .gallery-btn.active {
@@ -334,7 +405,7 @@ a:hover, a:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(24, 26, 27, 0.95);
+    background-color: var(--lightbox-bg);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -371,7 +442,7 @@ a:hover, a:focus {
 
 /* Code blocks and inline code */
 pre {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: var(--pre-bg);
     border: 1px solid var(--border-color);
     padding: 1rem;
     border-radius: 6px;
@@ -384,7 +455,7 @@ pre {
 code {
     font-family: var(--font-code);
     font-size: 0.9em;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--code-bg);
     padding: 0.15em 0.3em;
     border-radius: 4px;
 }
@@ -400,7 +471,7 @@ blockquote {
     margin: 1.75rem 0;
     padding: 1rem 1.25rem;
     border-left: 3px solid var(--accent);
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: var(--quote-bg);
     border-radius: 0 6px 6px 0;
     color: var(--text-primary);
 }
@@ -427,7 +498,7 @@ img {
     margin: 2rem auto;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--img-shadow);
     box-sizing: border-box;
 }
 
@@ -451,3 +522,75 @@ figcaption {
     border: none;
     box-shadow: none;
 }
+
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--toggle-border);
+    background-color: var(--toggle-bg);
+    color: var(--toggle-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, background-color 0.25s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.08);
+}
+
+.theme-toggle:active {
+    transform: scale(0.92);
+}
+
+.theme-icon {
+    display: none;
+    width: 18px;
+    height: 18px;
+}
+
+/* Show icon according to user setting */
+[data-theme-setting="auto"] .theme-icon-auto {
+    display: block;
+}
+
+[data-theme-setting="light"] .theme-icon-sun {
+    display: block;
+}
+
+[data-theme-setting="dark"] .theme-icon-moon {
+    display: block;
+}
+
+/* Fallback if data-theme-setting attribute is absent */
+:root:not([data-theme-setting]) .theme-icon-auto {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 34px;
+        height: 34px;
+    }
+    .theme-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+

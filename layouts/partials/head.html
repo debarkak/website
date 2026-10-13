@@ -17,3 +17,15 @@
     rel="stylesheet">
 
 <link rel="stylesheet" href="/style.css?v={{ now.Unix }}">
+<script>
+    (function () {
+        try {
+            const setting = localStorage.getItem('theme-setting') || 'auto';
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = setting === 'auto' ? (systemDark ? 'dark' : 'light') : setting;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-theme-setting', setting);
+        } catch (e) {}
+    })();
+</script>
+<script src="/theme.js" defer></script>
