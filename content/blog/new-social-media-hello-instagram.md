@@ -4,6 +4,8 @@ date: 2026-10-08
 draft: false
 ---
 
+> **UPDATE (MUST READ):** this post aged terribly. i have deactivated this account and left all social media — please read the follow-up post: [leaving social media](/blog/leaving-social-media/).
+
 hello there,
 
 so i finally made a public instagram account. it was long overdue i guess, but better late than never?
