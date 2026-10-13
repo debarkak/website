@@ -1,6 +1,8 @@
 baseURL = 'https://debarkak.xyz/'
 locale = 'en-US'
 title = 'debarkak'
+timeZone = 'Asia/Kolkata'
+buildFuture = true
 
 enableGitInfo = true
 
