@@ -594,3 +594,63 @@ figcaption {
     }
 }
 
+
+/* --- GitHub Activity Cards: Theme Adaptive --- */
+[data-theme="dark"] img[src*="#gh-light-mode-only"],
+[data-theme="dark"] .content p:has(> img[src*="#gh-light-mode-only"]:only-child) {
+    display: none !important;
+}
+
+[data-theme="light"] img[src*="#gh-dark-mode-only"],
+[data-theme="light"] .content p:has(> img[src*="#gh-dark-mode-only"]:only-child) {
+    display: none !important;
+}
+
+/* Fallback for when data-theme is auto/unset */
+:root:not([data-theme="dark"]):not([data-theme="light"]) img[src*="#gh-dark-mode-only"],
+:root:not([data-theme="dark"]):not([data-theme="light"]) .content p:has(> img[src*="#gh-dark-mode-only"]:only-child) {
+    display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) img[src*="#gh-dark-mode-only"],
+    :root:not([data-theme="light"]) .content p:has(> img[src*="#gh-dark-mode-only"]:only-child) {
+        display: block !important;
+    }
+    :root:not([data-theme="light"]) img[src*="#gh-light-mode-only"],
+    :root:not([data-theme="light"]) .content p:has(> img[src*="#gh-light-mode-only"]:only-child) {
+        display: none !important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) img[src*="#gh-light-mode-only"],
+    :root:not([data-theme="dark"]) .content p:has(> img[src*="#gh-light-mode-only"]:only-child) {
+        display: block !important;
+    }
+    :root:not([data-theme="dark"]) img[src*="#gh-dark-mode-only"],
+    :root:not([data-theme="dark"]) .content p:has(> img[src*="#gh-dark-mode-only"]:only-child) {
+        display: none !important;
+    }
+}
+
+/* Invert contribution chart empty white boxes in dark mode */
+[data-theme="dark"] img[src*="ghchart"] {
+    filter: invert(0.88) hue-rotate(180deg) brightness(0.9);
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) img[src*="ghchart"] {
+        filter: invert(0.88) hue-rotate(180deg) brightness(0.9);
+    }
+}
+
+/* Outline Unicode Lock */
+.lock-text {
+    font-variant-emoji: text;
+    -webkit-text-stroke: 1.1px currentColor;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 0.88em;
+    vertical-align: -1px;
+    margin: 0 0.15rem;
+}
